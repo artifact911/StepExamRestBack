@@ -9,8 +9,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 @SpringBootTest
 class TankServiceImplTest {
     private final TankService service;
@@ -58,7 +56,7 @@ class TankServiceImplTest {
         for (Tank value : allTanks){
 
             System.out.println(value.getForeignTanks().size());
-            System.out.println(value.getCapacity());
+            System.out.println(value.getWaterAmount());
 
 //            value.getForeignTanks().stream().forEach(System.out::println);
 

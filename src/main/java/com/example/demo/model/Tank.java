@@ -7,20 +7,21 @@ public class Tank {
 
     private static AtomicLong atomicLong = new AtomicLong();
     private long id = atomicLong.incrementAndGet();
-    private double capacity;
+    private double waterAmount;
 
-    private Set<Tank> foreignTanks = new HashSet<>();
+//    private Set<Tank> foreignTanks = new HashSet<>();
+    private Set<Long> foreignTanks = new HashSet<>();
 
     public Tank() {
-        foreignTanks.add(this);
+        foreignTanks.add(this.id);
     }
 
-    public double getCapacity() {
-        return capacity;
+    public double getWaterAmount() {
+        return waterAmount;
     }
 
-    public void setCapacity(double capacity) {
-        this.capacity = capacity;
+    public void setWaterAmount(double waterAmount) {
+        this.waterAmount = waterAmount;
 
     }
 
@@ -28,7 +29,7 @@ public class Tank {
         return id;
     }
 
-    public Set<Tank> getForeignTanks() {
+    public Set<Long> getForeignTanks() {
         return foreignTanks;
     }
 
